@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <h1 className="title">
-        C4C: Projects
+        Code 4 Community Partner Site
       </h1>
       <Dashboard />
     </>

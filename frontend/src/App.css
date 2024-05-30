@@ -27,6 +27,9 @@ h1.title {
 
   padding-bottom: 25px;
 }
+h1.title-emphasis {
+  color: rgb(0, 183, 234);
+}
 
 /* PartnerTile */
 
