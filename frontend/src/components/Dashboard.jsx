@@ -27,6 +27,8 @@ function Dashboard() {
     <div id="main-content">
       <div id="main-partners-grid">
         <p>cat</p>
+        <div class="add-new-card">
+        </div>
         {partners.map(item => {
             return <p>{<PartnerTile partnerData={{item}} />}</p>
           })}
