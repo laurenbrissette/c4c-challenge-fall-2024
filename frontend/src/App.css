@@ -21,14 +21,48 @@
   gap: 25px;
 }
 
-h1.title {
-  text-align: center;
-  font-size: 24pt;
+.upperlogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
 
+}
+
+.title {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 18px;
   padding-bottom: 25px;
 }
-h1.title-emphasis {
-  color: rgb(0, 183, 234);
+
+#c4c {
+  font-weight: lighter;
+}
+
+#partner {
+  padding-left: 8px;
+  color: #5B54DA;
+}
+
+/* Dashboard */
+.add-new-card {
+  outline-style: dashed;
+  outline-color: red;
+  outline-width: 2px;
+  width: 200px;
+  height: 200px;
+}
+
+h2.add-new-card {
+  display: none;
+}
+
+.add-new-card:hover {
+  display: block;
 }
 
 /* PartnerTile */
@@ -47,6 +81,7 @@ h1.title-emphasis {
 
   padding: 25px;
 }
+
 
 .partner-thumbnail {
   max-width: 330px;

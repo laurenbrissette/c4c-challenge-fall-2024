@@ -28,6 +28,7 @@ function Dashboard() {
       <div id="main-partners-grid">
         <p>cat</p>
         <div class="add-new-card">
+          <h2>Add new project</h2>
         </div>
         {partners.map(item => {
             return <p>{<PartnerTile partnerData={{item}} />}</p>
