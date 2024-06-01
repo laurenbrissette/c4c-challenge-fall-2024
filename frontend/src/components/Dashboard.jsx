@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import PartnerTile from './PartnerTile';
+import React from 'react';
 
 /*
   The top-level component containing everything relevant to the dashboard,
@@ -13,17 +13,25 @@ function Dashboard() {
   useEffect(() => {
     fetch('http://localhost:4000', {
       method: 'GET',
-    })
-    .then((res) => res.json())
+    }).then((res) => res.json()
+    ).then(
+      data => {
+        setPartners(data)
+      }
+    )
   }, [])
 
   return (
     <div id="main-content">
       <div id="main-partners-grid">
-        <PartnerTile partnerData={{}} />
+        <ul>
+          {partners.map(item => {
+            return <li>{item}</li>;
+          })}
+        </ul>
       </div>
     </div>
-  )
+  );
 }
 
 export default Dashboard;
