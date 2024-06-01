@@ -13,7 +13,7 @@ const there = {
   localId : "2",
 }
 
-const partners = ["cat", "dog"];
+const partners = [bkt, there];
 
 /* 
   APPLICATION MIDDLEWARE

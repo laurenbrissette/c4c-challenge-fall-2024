@@ -26,7 +26,7 @@ function Dashboard() {
       <div id="main-partners-grid">
         <ul>
           {partners.map(item => {
-            return <li>{item}</li>;
+            return <li>{item.name}</li>;
           })}
         </ul>
       </div>
