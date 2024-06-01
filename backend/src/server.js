@@ -4,16 +4,58 @@ const app = express();
 const port = 4000;
 
 // Some partner data
-const bkt = {
-  name : "bkt",
-  localId : "1",
-};
-const there = {
-  name : "there",
-  localId : "2",
+var bkt = new Partner('https://static.wixstatic.com/media/1193ef_371853f9…_0.01,enc_auto/Breaktime%20Logo%20Comfortaa-2.jpg', 
+"Breaktime", "eventually i will fill this with specific information");
+
+var tswgo = {
+  thumbnailUrl: "https://images.squarespace-cdn.com/content/v1/5afe…NHSLS67AF1SRNW6JAX4/LOGO_TSWGO_1.png?format=1500w",
+  name: "This Star Won't Go Out",
+  description: "eventually i will fill this with specific information"
 }
 
-const partners = [bkt, there];
+var jpal = {
+  thumbnailUrl: "https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/JPAL_logo.svg",
+  name: "J-PAL",
+  description: "eventually i will fill this with specific information"
+}
+
+var llbpn = {
+  thumbnailUrl: "https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/LLB_2019_rgb.png",
+  name: "Lucy's Love Bus - Practitioner Network",
+  description: "eventually i will fill this with specific information"
+}
+
+var llbsc = {
+  thumbnailUrl: "https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/LLB_2019_rgb.png",
+  name: "Lucy's Love Bus - Sajini Center",
+  description: "eventually i will fill this with specific information"
+}
+
+var sftt = {
+  thumbnailUrl: "https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/sfft-project-page.png",
+  name: "Speak For The Trees",
+  description: "Speak for the Trees Boston aims to improve the size and health of the urban forest " 
+      + "in the greater Boston area, with a focus on under-served and under-canopied neighborhoods. They "
+      + "work with volunteers to inventory (collect data) trees, plant trees, and educate those about trees. "
+      + "C4C has built a tree stewardship application for SFTT that allows users to participate in conserving "
+      + "Boston's urban forest. Across Boston, hundreds of trees have been adopted and cared for."
+}
+
+var coc = {
+  thumbnailUrl: "https://www.cambridgema.gov/~/media/Images/sharedimages/cityseal/cityseal?mw=1920",
+  name: "City of Cambridge",
+  description: "eventually i will fill this with specific information"
+}
+
+var partners = [bkt];
+
+
+function Partner(thumbnailUrl, name, description) {
+  this.thumbnailUrl = thumbnailUrl;
+  this.name = name;
+  this.description = description;
+
+}
 
 /* 
   APPLICATION MIDDLEWARE

@@ -5,18 +5,19 @@ import React from 'react';
   along with any tools to manage said information
 */
 
-function PartnerTile({ partnerData }) {
+function PartnerTile(partnerData) {
 
   return (
     <div className="partner-tile">
-      <img className="partner-thumbnail" src="" />
+      <img className="partner-thumbnail" src='' />
       <hr />
-      <div className="partner-info">
-        {
-            <p>here</p>
-        }
+      <div id="demo" className="partner-info">
+        {Object.values(partnerData).map(i => {
+          return <p>{i.item.name}</p>;
+        })}
       </div>
     </div>
   )
 }
+
 export default PartnerTile;
