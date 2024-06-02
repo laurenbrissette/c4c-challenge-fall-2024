@@ -53,7 +53,7 @@ var coc = new Partner("https://www.cambridgema.gov/~/media/Images/sharedimages/c
 + "out for a similar project. We are developing an interactive tree map for all of Cambridge, empowering "
 + "citizens to become steward of Cambridge's mighty urban forest.");
 
-var partners = [bkt, tswgo, jpal, llbpn, llbsc, sftt];
+var partners = [bkt, tswgo, jpal, llbpn, llbsc, sftt, coc];
 
 
 function Partner(thumbnailUrl, name, description) {

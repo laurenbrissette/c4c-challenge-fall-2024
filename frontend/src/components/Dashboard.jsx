@@ -10,6 +10,7 @@ import PartnerTile from './PartnerTile';
 function Dashboard() {
 
   const [partners, setPartners] = useState({});
+  const [loading, setLoading] = useState(true)
 
   // Load all partners on initial page load 
   useEffect(() => {
@@ -17,22 +18,19 @@ function Dashboard() {
       method: 'GET',
     }).then((res) => res.json()
     ).then(
-      data => {
-        setPartners(data)
-      }
+      data => setPartners(data) + setLoading(false)
     )
   }, [])
 
   return (
     <div id="main-content">
       <div id="main-partners-grid">
-        <p>cat</p>
-        <div class="add-new-card">
-          <h2>Add new project</h2>
-        </div>
-        {partners.map(item => {
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+        partners.map(item => {
             return <p>{<PartnerTile partnerData={{item}} />}</p>
-          })}
+          }))}
       </div>
     </div>
   )
