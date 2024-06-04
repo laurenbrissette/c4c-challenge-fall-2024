@@ -3,6 +3,7 @@ import express from 'express';
 const app = express();
 const port = 4000;
 
+
 // Some partner data
 var bkt = new Partner("https://static.wixstatic.com/media/1193ef_371853f9…_0.01,enc_auto/Breaktime%20Logo%20Comfortaa-2.jpg", 
 "Breaktime", "Breaktime’s mission is to break the cycle of homelessness by equipping young adults with "
@@ -71,7 +72,8 @@ function Partner(thumbnailUrl, name, description) {
 */
 
 // Parse request bodies as JSON
-app.use(express.json())
+app.use(express.json());
+
 // Enable CORS for the frontend so it can call the backend
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -91,4 +93,9 @@ app.get('/', (req, res) => {
 // Start the backend
 app.listen(port, () => {
   console.log(`Express server starting on port ${port}!`);
+})
+
+app.post('/', (req, res) => {
+  var here = new Partner("https://www.cambridgema.gov/~/media/Images/sharedimages/cityseal/cityseal?mw=1920", req.body.name, req.body.description);
+  partners.push(here);
 })

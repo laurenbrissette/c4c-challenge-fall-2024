@@ -22,6 +22,7 @@ function Dashboard() {
     )
   }, [])
 
+
   return (
     <div id="main-content">
       <div id="main-partners-grid">
@@ -29,7 +30,7 @@ function Dashboard() {
           <p>Loading...</p>
         ) : (
         partners.map(item => {
-            return <p>{<PartnerTile partnerData={{item}} />}</p>
+            return <>{<PartnerTile partnerData={{item}} />}</>
           }))}
       </div>
     </div>
