@@ -92,3 +92,8 @@ h2.add-new-card {
 .partner-info {
   font-size: 0.9em;
 }
+
+.edit-symbol {
+  height: 50px;
+  width: 50px;
+}

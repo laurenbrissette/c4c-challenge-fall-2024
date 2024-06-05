@@ -21,7 +21,8 @@ function Dashboard() {
       data => setPartners(data) + setLoading(false)
     )
   }, [])
-
+  console.log("partners is")
+  console.log(partners)
 
   return (
     <div id="main-content">
@@ -30,7 +31,7 @@ function Dashboard() {
           <p>Loading...</p>
         ) : (
         partners.map(item => {
-            return <>{<PartnerTile partnerData={{item}} />}</>
+            return <>{<PartnerTile partnerData={item} />}</>
           }))}
       </div>
     </div>

@@ -99,3 +99,13 @@ app.post('/', (req, res) => {
   var here = new Partner("https://www.cambridgema.gov/~/media/Images/sharedimages/cityseal/cityseal?mw=1920", req.body.name, req.body.description);
   partners.push(here);
 })
+
+app.delete('/', (req, res) => {
+  // find the index in the array of the element that meets the given requirement 
+  for (let i = 0; i < partners.length; i++) {
+    if(partners[i].name == req.body.name) {
+      partners.splice(i, 1); // remove element at that index 
+    }
+  }
+  
+})
