@@ -21,29 +21,25 @@ function PartnerTile(partnerData) {
   return (
     <>
     <div className="partner-tile">
-      {partnerData.partnerData.name}
-      <img className="partner-thumbnail" src='' />
-      <hr />
-      <button onClick={respond}>
-        <img className="edit-symbol" src='/edit.png'></img>
-      </button>
-      <div id="demo" className="partner-info">
+      <img className="partner-thumbnail" src={partnerData.partnerData.thumbnailUrl} />
+      <div className="top-line">
+        <div className="partner-title">{partnerData.partnerData.name}</div>
+        {partnerData.partnerData.isActive == true ? (
+          <div className="active-indicator">Active</div>
+        ) 
+          : ( <div className="inactive-indicator">Inactive</div>)
+        }
+      </div>
+      <div className="partner-info">
         {partnerData.partnerData.description}
       </div>
-      <button onClick={DeleteTile}>
-        click this to delete
+      <div className="center">
+      <button class="delete-button" onClick={DeleteTile}>
+        delete project
       </button>
+      </div>
     </div>
     </>
   )
 }
-
-function respond() {
-  return (
-    <>
-      {alert(0)}
-    </>
-  );
-}
-
 export default PartnerTile;

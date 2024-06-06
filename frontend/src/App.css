@@ -6,19 +6,12 @@
 
 /* MainDisplay */
 
-#main-content {
-  width: 1000px;
-  padding: 20px 30px;
-  margin: auto;
-}
 
 #main-partners-grid {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-
-  gap: 25px;
 }
 
 .upperlogo {
@@ -32,7 +25,6 @@
 }
 
 .title {
-  background-color: aliceblue;
   display: flex;
   text-align: center;
   align-items: center;
@@ -47,6 +39,15 @@
 #partner {
   padding-left: 8px;
   color: #5B54DA;
+}
+
+.create-new-button {
+  background-color: #5B54DA;
+  border-style: none;
+  box-shadow: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 /* Dashboard */
@@ -69,31 +70,80 @@ h2.add-new-card {
 /* PartnerTile */
 
 .partner-tile {
-  width: 450px;
-  height: 400px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 325px;
+  height: 500px;
+  text-align: justify;
+  margin: 30px;
   align-items: center;
-
-  border: 1px solid #3d3d3d;
-  border-radius: 12px;
-
-  padding: 25px;
 }
-
 
 .partner-thumbnail {
-  max-width: 330px;
-  max-height: 150px;
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: #A6A6A6;
+  padding: 5px; 
+  height: 270px;
+  width: 325px;
+  object-fit: contain;
+  padding: none;
+  margin-bottom: 10px;
 }
 
-.partner-info {
-  font-size: 0.9em;
+.partner-title {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-right: 10px;
 }
+
+
+.partner-info {
+  font-size: 14px;
+}
+
 
 .edit-symbol {
   height: 50px;
   width: 50px;
+}
+
+.active-indicator, .inactive-indicator {
+  color: black;
+  padding: 3px;
+  align-content: center;
+  border-radius: 5px;
+  font-size: 12px;
+  justify-self: right;
+} 
+
+.active-indicator {
+  background-color: #52D47F;
+}
+
+.inactive-indicator {
+  background-color: #FF8484;
+}
+
+
+.delete-button {
+  height: 45px;
+  width: 275px;
+  outline-style: none;
+  border-style: none;
+  border-width: 0;
+  box-shadow: none;
+  justify-content: center;
+  background-color: rgb(237, 236, 236);
+  border-radius: 5px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-line {
+  display: flex;
+  align-items: center;
+  margin: 5px;
 }

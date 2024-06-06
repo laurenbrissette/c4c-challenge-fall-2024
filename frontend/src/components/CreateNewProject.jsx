@@ -90,17 +90,14 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-
-
-
 function CreateNewProject() {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <>
-    <Button variant="primary" onClick={() => setModalShow(true)}>
-        Create New Project
-    </Button>
+    <button className="create-new-button" onClick={() => setModalShow(true)}>
+        Create A New Project
+    </button>
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}

@@ -19,11 +19,15 @@ function App() {
     <div className="all">
     <div className="heading">
       <span className="upperlogo"><img className="upperlogo" src="/favicon.ico"></img></span>
+      <div className="center">
       <span className="title">
         <h1 id="c4c">Code 4 Community </h1><h1 id="partner">Partner Site</h1>
       </span>
+      </div>
     </div>
-    < CreateNewProject />
+    <div className="center">
+    < CreateNewProject /> 
+    </div>
     < Dashboard />
     </div>
     

@@ -5,17 +5,17 @@ const port = 4000;
 
 
 // Some partner data
-var bkt = new Partner("https://static.wixstatic.com/media/1193ef_371853f9…_0.01,enc_auto/Breaktime%20Logo%20Comfortaa-2.jpg", 
+var bkt = new Partner("https://static.wixstatic.com/media/1193ef_371853f9145b445fb883f16ed7741b60~mv2.jpg/v1/crop/x_0,y_2,w_1842,h_332/fill/w_466,h_84,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Breaktime%20Logo%20Comfortaa-2.jpg",
 "Breaktime", "Breaktime’s mission is to break the cycle of homelessness by equipping young adults with "
 + "the job and financial security they need to establish housing security. A key part of the program is "
 + "by providing meaningful employment. We are assisting Breaktime in building a bespoke system for their "
-+ "unique needs.");
++ "unique needs.", true);
 
-var tswgo = new Partner("https://images.squarespace-cdn.com/content/v1/5afe…NHSLS67AF1SRNW6JAX4/LOGO_TSWGO_1.png?format=1500w",
+var tswgo = new Partner("https://images.squarespace-cdn.com/content/v1/5afe1b373e2d09d58a8b7629/1548818988674-PNHSLS67AF1SRNW6JAX4/LOGO_TSWGO_1.png?format=1500w",
 "This Star Won't Go Out", "Since its founding in 2011, TSWGO has helped hundreds of families, "
 + "with gifts totaling over $450,000 to help families suffering from financial hardship related "
 + "to childhood cancer. We're helping to streamline this system so that TSWGO can focus their attention "
-+ "on helping families.");
++ "on helping families.", true);
 
 var jpal = new Partner("https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/JPAL_logo.svg",
 "J-PAL", "The Abdul Latif Jameel Poverty Action Lab (J-PAL) is a global research center working "
@@ -25,20 +25,20 @@ var jpal = new Partner("https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/JP
 + "and employment outcomes after the program. C4C is building a system that simplifies the creation, "
 + "dissemination and completion of surveys that will be used to create unique letters of recommendation "
 + "for each youth. Each youth will be sent their unique letter(s) of recommendation, which we hope will "
-+ "improve their educational and employment opportunities.");
++ "improve their educational and employment opportunities.", true);
 
 var llbpn = new Partner("https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/LLB_2019_rgb.png",
 "Lucy's Love Bus - Practitioner Network", "Lucy’s Love Bus improves quality of life for children "
 + "with cancer or other life-threatening illnesses with integrative therapies like massage, meditation, "
 + "acupuncture, music therapy, and therapeutic horseback riding. Integrative therapies ease children’s "
 + "pain and anxiety during and after traditional medical treatments. We are building an open search "
-+ "directory to allow families across New England to find integrative therapists in their area.");
++ "directory to allow families across New England to find integrative therapists in their area.", true);
 
 var llbsc = new Partner("https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/LLB_2019_rgb.png",
 "Lucy's Love Bus - Sajini Center", "The Sajni Center is a space of hope and healing for children "
 + "with life-threatening illness or chronic medical conditions and their families. Here they host "
 + "events for the children and their families. We created the event planning and ticket purchasing "
-+ "system for all the events hosted by Lucy's Love Bus.");
++ "system for all the events hosted by Lucy's Love Bus.", true);
 
 var sftt = new Partner("https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/sfft-project-page.png",
 "Speak For The Trees",
@@ -46,22 +46,21 @@ var sftt = new Partner("https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/sf
       + "in the greater Boston area, with a focus on under-served and under-canopied neighborhoods. They "
       + "work with volunteers to inventory (collect data) trees, plant trees, and educate those about trees. "
       + "C4C has built a tree stewardship application for SFTT that allows users to participate in conserving "
-      + "Boston's urban forest. Across Boston, hundreds of trees have been adopted and cared for."
-);
+      + "Boston's urban forest. Across Boston, hundreds of trees have been adopted and cared for.", true);
 
 var coc = new Partner("https://www.cambridgema.gov/~/media/Images/sharedimages/cityseal/cityseal?mw=1920",
 "City of Cambridge","After the success of the Speak for the Trees project, the City of Cambridge reached "
 + "out for a similar project. We are developing an interactive tree map for all of Cambridge, empowering "
-+ "citizens to become steward of Cambridge's mighty urban forest.");
++ "citizens to become steward of Cambridge's mighty urban forest.", false);
 
 var partners = [bkt, tswgo, jpal, llbpn, llbsc, sftt, coc];
 
 
-function Partner(thumbnailUrl, name, description) {
+function Partner(thumbnailUrl, name, description, isActive) {
   this.thumbnailUrl = thumbnailUrl;
   this.name = name;
   this.description = description;
-
+  this.isActive = isActive;
 }
 
 /* 
@@ -96,7 +95,7 @@ app.listen(port, () => {
 })
 
 app.post('/', (req, res) => {
-  var here = new Partner("https://www.cambridgema.gov/~/media/Images/sharedimages/cityseal/cityseal?mw=1920", req.body.name, req.body.description);
+  var here = new Partner("https://www.cambridgema.gov/~/media/Images/sharedimages/cityseal/cityseal?mw=1920", req.body.name, req.body.description, req.body.isActive);
   partners.push(here);
 })
 
