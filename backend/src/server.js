@@ -97,6 +97,7 @@ app.listen(port, () => {
 app.post('/', (req, res) => {
   var here = new Partner(req.body.thumbnailUrl, req.body.name, req.body.description, req.body.isActive);
   partners.push(here);
+  res.send(here);
 })
 
 app.delete('/', (req, res) => {

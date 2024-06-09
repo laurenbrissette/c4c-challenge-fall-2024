@@ -8,6 +8,7 @@ import React from 'react';
 function PartnerTile(partnerData) {
 
   function DeleteTile() {
+    
     fetch('http://localhost:4000/', {
       method: 'DELETE',
       headers: {
@@ -16,6 +17,8 @@ function PartnerTile(partnerData) {
       body: JSON.stringify(partnerData.partnerData)
   }).then(response => JSON.stringify(response)).then(data =>
     console.log(data));
+    
+    window.location.reload();
   }
 
   return (
@@ -34,9 +37,9 @@ function PartnerTile(partnerData) {
         {partnerData.partnerData.description}
       </div>
       <div className="center">
-      <button className="delete-button" onClick={DeleteTile}>
-        delete project
-      </button>
+        <button type="submit" className="delete-button" onClick={DeleteTile}>
+          delete project
+        </button>
       </div>
     </div>
     </>
