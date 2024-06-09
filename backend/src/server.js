@@ -95,7 +95,7 @@ app.listen(port, () => {
 })
 
 app.post('/', (req, res) => {
-  var here = new Partner("https://www.cambridgema.gov/~/media/Images/sharedimages/cityseal/cityseal?mw=1920", req.body.name, req.body.description, req.body.isActive);
+  var here = new Partner(req.body.thumbnailUrl, req.body.name, req.body.description, req.body.isActive);
   partners.push(here);
 })
 

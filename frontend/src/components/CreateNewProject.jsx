@@ -13,28 +13,22 @@ function MyVerticallyCenteredModal(props) {
     event.preventDefault()
     console.log("New submission click");
     const newName = document.getElementById('nameInput').value;
-    console.log(newName)
     const newDesc = document.getElementById('descriptionInput').value;
-    console.log(newDesc)
-    const newActive = document.getElementById('activeInput');
+    const newActive = document.getElementById('activeInput').value;
+    const newThumb = document.getElementById('thumbnailInput').value;
+    console.log(newThumb);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    console.log(JSON.stringify({"name": newName + '', "description": newDesc + ''}));
   
     fetch('http://localhost:4000/', {
         method: 'POST',
         headers: {
           'Content-Type':'application/json'
         },
-        body: JSON.stringify({"name": newName + '', "description": newDesc + ''})
+        body: JSON.stringify({"name": newName + '', "description": newDesc + '', "isActive": newActive + '', "thumbnailUrl": newThumb + ''})
     }).then(response => JSON.stringify(response)).then(data =>
-      console.log(data));
+      console.log(data) + handleClose);
   
-  return (
-    <>
-      {alert("processed")}
-    </>
-    );
   }
 
   return (
@@ -50,40 +44,41 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Form>
-        <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-        <Form.Label column sm={{offset: 1}}>
-          Name
-        </Form.Label>
-        <Col sm={{span: 9}}>
-          <Form.Control id="nameInput" placeholder="Start typing..." />
-        </Col>
-      </Form.Group>
-
-      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-        <Form.Label column sm={{offset: 1}}>
-          Description
-        </Form.Label>
-        <Col sm={{span: 9}}>
-          <Form.Control id="descriptionInput" placeholder="Start typing..." />
-        </Col>
-      </Form.Group>
-        <Form>
+        <Form.Group as={Row} className="mb-3">
+          <Form.Label column sm={{offset: 1}}>
+            Name
+          </Form.Label>
+         <Col sm={{span: 9}}>
+           <Form.Control id="nameInput" placeholder="Start typing..." />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} className="mb-3">
+          <Form.Label column sm={{offset: 1}}>
+            Description
+          </Form.Label>
+          <Col sm={{span: 9}}>
+            <Form.Control id="descriptionInput" placeholder="Start typing..." />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} className="mb-3">
+          <Form.Label column sm={{offset: 1}}>
+            Thumbnail
+          </Form.Label>
+          <Col sm={{span: 9}}>
+            <Form.Control id="thumbnailInput" placeholder="Start typing..." />
+          </Col>
+        </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <Form.Check id="activeInput" label="Active project" />
-        </Col>
-      </Form.Group>
-
-        </Form>
-      <Modal.Body>
-        
-      </Modal.Body>
+          <Col sm={{ span: 10, offset: 2 }}>
+            <Form.Check id="activeInput" label="Active project" />
+          </Col>
+        </Form.Group>
       <Modal.Footer>
-      <Form.Group as={Row} className="mb-3">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <input onClick={ProcessSubmit} type="button" id="submitNew" value="submit"></input>
-        </Col>
-      </Form.Group>
+        <Form.Group as={Row} className="mb-3">
+          <Col sm={{ span: 10, offset: 2 }}>
+           <input onClick={ProcessSubmit} type="button" id="submitNew" value="submit"></input>
+          </Col>
+        </Form.Group>
       </Modal.Footer>
       </Form>
     </Modal>
