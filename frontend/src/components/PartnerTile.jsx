@@ -27,7 +27,7 @@ function PartnerTile(partnerData) {
       <img className="partner-thumbnail" src={partnerData.partnerData.thumbnailUrl} />
       <div className="top-line">
         <div className="partner-title">{partnerData.partnerData.name}</div>
-        {partnerData.partnerData.isActive == true ? (
+        {partnerData.partnerData.isActive == "true" ? (
           <div className="active-indicator">Active</div>
         ) 
           : ( <div className="inactive-indicator">Inactive</div>)

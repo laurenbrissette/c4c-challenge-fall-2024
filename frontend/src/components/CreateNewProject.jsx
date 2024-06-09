@@ -48,7 +48,7 @@ function MyVerticallyCenteredModal(props) {
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
           <Col sm={{ span: 10, offset: 2 }}>
-            <Form.Check id="activeInput" label="Active project" />
+            <Form.Check id="activeInput" label="Active"/>
           </Col>
         </Form.Group>
       <Modal.Footer>
@@ -64,11 +64,10 @@ function MyVerticallyCenteredModal(props) {
 }
 
 function ProcessSubmit(event) {
-  e.preventDefault();
   console.log("New submission click");
   const newName = document.getElementById('nameInput').value;
   const newDesc = document.getElementById('descriptionInput').value;
-  const newActive = document.getElementById('activeInput').value;
+  const newActive = document.getElementById('activeInput').checked;
   const newThumb = document.getElementById('thumbnailInput').value;
 
   fetch('http://localhost:4000/', {
