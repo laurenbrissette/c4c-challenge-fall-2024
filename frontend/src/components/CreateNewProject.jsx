@@ -7,6 +7,11 @@ import Row from 'react-bootstrap/Row';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+/*
+  A pop-up modal containing a form for users to submit a new partner project to 
+  add to the site.  Launched via "Create A New Project" button on homepage.
+*/
+
 function MyVerticallyCenteredModal(props) {
 
   return (
@@ -24,7 +29,7 @@ function MyVerticallyCenteredModal(props) {
       <Form onSubmit={ProcessSubmit}>
         <Form.Group as={Row} className="mb-3">
           <Form.Label column sm={{offset: 1}}>
-            Name
+            Name:
           </Form.Label>
          <Col sm={{span: 9}}>
            <Form.Control id="nameInput" placeholder="Start typing..." />
@@ -32,7 +37,7 @@ function MyVerticallyCenteredModal(props) {
         </Form.Group>
         <Form.Group as={Row} className="mb-3">
           <Form.Label column sm={{offset: 1}}>
-            Description
+            Description:
           </Form.Label>
           <Col sm={{span: 9}}>
             <Form.Control id="descriptionInput" placeholder="Start typing..." />
@@ -40,7 +45,7 @@ function MyVerticallyCenteredModal(props) {
         </Form.Group>
         <Form.Group as={Row} className="mb-3">
           <Form.Label column sm={{offset: 1}}>
-            Thumbnail
+            Thumbnail:
           </Form.Label>
           <Col sm={{span: 9}}>
             <Form.Control id="thumbnailInput" placeholder="Start typing..." />
@@ -48,7 +53,7 @@ function MyVerticallyCenteredModal(props) {
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
           <Col sm={{ span: 10, offset: 2 }}>
-            <Form.Check id="activeInput" label="Active"/>
+            <Form.Check id="activeInput" label="This is an active project."/>
           </Col>
         </Form.Group>
       <Modal.Footer>
@@ -77,7 +82,6 @@ function ProcessSubmit(event) {
       },
       body: JSON.stringify({"name": newName + '', "description": newDesc + '', "isActive": newActive + '', "thumbnailUrl": newThumb + ''})
   });
-  
 }
 
 function CreateNewProject() {

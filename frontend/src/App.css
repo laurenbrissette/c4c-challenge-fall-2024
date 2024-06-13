@@ -4,9 +4,13 @@
   ================
 */
 
+.all {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* MainDisplay */
-
-
 #main-partners-grid {
   display: flex;
   justify-content: space-evenly;
@@ -105,12 +109,6 @@ h2.add-new-card {
   font-size: 14px;
   overflow: scroll;
   height: 150px;
-}
-
-
-.edit-symbol {
-  height: 50px;
-  width: 50px;
 }
 
 .active-indicator, .inactive-indicator {

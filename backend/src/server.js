@@ -38,7 +38,7 @@ var llbsc = new Partner("https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/L
 "Lucy's Love Bus - Sajini Center", "The Sajni Center is a space of hope and healing for children "
 + "with life-threatening illness or chronic medical conditions and their families. Here they host "
 + "events for the children and their families. We created the event planning and ticket purchasing "
-+ "system for all the events hosted by Lucy's Love Bus.", "true");
++ "system for all the events hosted by Lucy's Love Bus.", "false");
 
 var sftt = new Partner("https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/sfft-project-page.png",
 "Speak For The Trees",
@@ -46,7 +46,7 @@ var sftt = new Partner("https://c4cneu-public.s3.us-east-2.amazonaws.com/Site/sf
       + "in the greater Boston area, with a focus on under-served and under-canopied neighborhoods. They "
       + "work with volunteers to inventory (collect data) trees, plant trees, and educate those about trees. "
       + "C4C has built a tree stewardship application for SFTT that allows users to participate in conserving "
-      + "Boston's urban forest. Across Boston, hundreds of trees have been adopted and cared for.", "true");
+      + "Boston's urban forest. Across Boston, hundreds of trees have been adopted and cared for.", "false");
 
 var coc = new Partner("https://www.cambridgema.gov/~/media/Images/sharedimages/cityseal/cityseal?mw=1920",
 "City of Cambridge","After the success of the Speak for the Trees project, the City of Cambridge reached "
